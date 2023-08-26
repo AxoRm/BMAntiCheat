@@ -13,12 +13,12 @@ import java.util.HashMap;
 import java.util.Objects;
 
 public class Listeners implements Listener {
-    private final Config config = BaritoneChecker.config;
     public static HashMap<String, Pair<Integer, Double>> players = new HashMap<>();
     public static HashMap<String, Integer> punishments = new HashMap<>();
     public static HashMap<String, Integer> times = new HashMap<>();
     public static HashMap<String, Integer> arithmetical = new HashMap<>();
     public static HashMap<String, Boolean> use = new HashMap<>();
+    private final Config config = BaritoneChecker.config;
 
     @EventHandler(priority = EventPriority.MONITOR)
     public void onPlayerMove(PlayerMoveEvent event) {
@@ -26,34 +26,27 @@ public class Listeners implements Listener {
         OPTIMIZATIONS
          */
         Player player = event.getPlayer();
-        if (player.hasPermission("baritone.bypass"))
-            return;
-        if (player.isSwimming() && !config.checkWhenSwimming())
-            return;
-        if (player.isInWater() && !config.checkWater())
-            return;
-        if (!player.isSprinting() && config.checkWhenSprinting() && !player.isInWater())
-            return;
-        if (player.isFlying() && !config.checkFlight())
-            return;
-        if (player.isSneaking() && !config.checkSneak() && !player.isInWater() && !player.isFlying())
-            return;
-        if (config.checkCamera()) {
+        if (player.hasPermission("baritone.bypass")) return;
+        if (player.isSwimming() && !config.isCheckWhenSwimming()) return;
+        if (player.isInWater() && !config.isCheckInWater()) return;
+        if (!player.isSprinting() && config.isCheckOnlyWhenSprinting() && !player.isInWater()) return;
+        if (player.isFlying() && !config.isCheckInFlight()) return;
+        if (player.isSneaking() && !config.isCheckInSneak() && !player.isInWater() && !player.isFlying()) return;
+        if (config.isCheckCameraYawForOptimization()) {
             float yaw = player.getLocation().getYaw();
             double angle = getAngleDistance(yaw);
-            if (angle > config.getYawRangeCheck())
-                return;
+            if (angle > config.getCameraYawRangeCheck()) return;
         }
         String playerName = player.getName();
+
         /*
         RANGE CHECKERS AND SAVES PER PLAYER
          */
         Location to = event.getTo();
         Location from = event.getFrom();
-        if (to == null)
-            return;
+        if (to == null) return;
         double angle;
-        if (config.isUseCamera()) {
+        if (config.isUseCameraYawInsteadVector()) {
             angle = player.getLocation().getYaw();
         } else {
             Vector velocity = new Vector(to.getX() - from.getX(), to.getY() - from.getY(), to.getZ() - from.getZ());
@@ -62,9 +55,9 @@ public class Listeners implements Listener {
         }
         if (angle > config.getYawRange()) {
             if (use.getOrDefault(playerName, false)) {
-                if (players.getOrDefault(playerName, new Pair<>(0, 0d)).getSecond() > config.getArithmeticalMinimum() && players.getOrDefault(playerName, new Pair<>(0, 0d)).getSecond() < config.getArithmeticalMaximum() && players.getOrDefault(playerName, new Pair<>(0, 0d)).getFirst() >= config.getArithmeticalPunish()) {
+                if (players.getOrDefault(playerName, new Pair<>(0, 0d)).getSecond() > config.getArithmeticalLowerValue() && players.getOrDefault(playerName, new Pair<>(0, 0d)).getSecond() < config.getArithmeticalHigherValue() && players.getOrDefault(playerName, new Pair<>(0, 0d)).getFirst() >= config.getArithmeticalPunish()) {
                     arithmetical.put(playerName, arithmetical.getOrDefault(playerName, 0) + 1);
-                    Chat.sendAdminAndConsole(Chat.format(config.getKickArithMessage(), playerName, arithmetical.get(playerName), config.getArithmeticalMean()));
+                    Chat.sendAdminAndConsole(Chat.format(config.getArithmeticalMeanMessage(), playerName, arithmetical.get(playerName), config.getArithmeticalMean()));
                     if (arithmetical.get(playerName) >= config.getArithmeticalMean()) {
                         arithmetical.put(playerName, 0);
                         player.kickPlayer(Chat.format(config.getKickMessage(), playerName, 0, 0));
@@ -79,16 +72,17 @@ public class Listeners implements Listener {
             }
             return;
         }
+
         /*
-        Additional movement check
+        ADDITIONAL MOVEMENT CHECK
          */
-        if (config.isMoveCheck()) {
+        if (config.isAdditionalMovementCheck()) {
             double fx = Math.abs((from.getX() - (int) from.getX()));
             double fz = Math.abs((from.getZ() - (int) from.getZ()));
             double tx = Math.abs((to.getX() - (int) to.getX()));
             double tz = Math.abs((to.getZ() - (int) to.getZ()));
-            double range = config.getMoveRange();
-            double multiplier = config.getMultiplier();
+            double range = config.getAdditionalMovementRange();
+            double multiplier = config.getAdditionalMovementDiagonalMulti();
             if (!((Math.abs(fx - fz) <= range * multiplier && Math.abs(tx - tz) <= range * multiplier) ||
                     (Math.abs(fx + fz) <= 1 + range * multiplier && Math.abs(fx + fz) >= 1 - range * multiplier && Math.abs(tx + tz) <= 1 + range * multiplier && Math.abs(tx + tz) >= 1 - range * multiplier) ||
                     (Math.abs(fx - 0.5) <= range && Math.abs(tx - 0.5) <= range) ||
@@ -99,8 +93,9 @@ public class Listeners implements Listener {
         use.put(playerName, true);
         addTime(playerName);
         kickPlayer(playerName);
+
         /*
-        ADDITION CHECK Arithmetical Mean
+        ADDITIONAL CHECK ARITHMETICAL MEAN
          */
         Pair<Integer, Double> playerEntry = players.getOrDefault(playerName, new Pair<>(0, 0d));
         if (playerEntry.getSecond() != angle) {
@@ -111,8 +106,9 @@ public class Listeners implements Listener {
                 Bukkit.getLogger().info(Chat.format("&cИгрок &a{player} &cподозревается в Baritone", playerName, 0, 0));
             }
         }
+
         /*
-        DeBUGGER
+        DEBUGGER
          */
         if (config.isDebug()) {
             Bukkit.getLogger().info("СРЕДНЕЕ АРИФМЕТИЧСКОЕ: " + playerEntry.getSecond()
@@ -126,8 +122,8 @@ public class Listeners implements Listener {
     }
 
     private double getAngleDistance(double angle) {
-        double maxAngle = Math.ceil(angle / 45)*45 - angle;
-        double minAngle = angle - Math.floor(angle / 45)*45;
+        double maxAngle = Math.ceil(angle / 45) * 45 - angle;
+        double minAngle = angle - Math.floor(angle / 45) * 45;
         return Math.min(maxAngle, minAngle);
     }
 
@@ -135,12 +131,12 @@ public class Listeners implements Listener {
         int time = times.getOrDefault(playerName, 0) + 1;
         times.put(playerName, time);
         int punishes = punishments.getOrDefault(playerName, 0);
-        if (punishes >= config.getCountPunish()) {
+        if (punishes >= config.getCountPunishmentKick()) {
             return;
         }
-        if ((double) time == config.getAdminPunish()*20) {
+        if ((double) time == config.getAdminPunishment() * 20) {
             punishes++;
-            Chat.sendAdminAndConsole(Chat.format(config.getPunishMessage(), playerName, punishes, config.getCountPunish()));
+            Chat.sendAdminAndConsole(Chat.format(config.getPunishMessage(), playerName, punishes, config.getCountPunishmentKick()));
             time = 0;
             times.put(playerName, time);
             punishments.put(playerName, punishes);
@@ -149,8 +145,8 @@ public class Listeners implements Listener {
 
     private void kickPlayer(String playerName) {
         int time = times.getOrDefault(playerName, 0);
-        if ((double) time == config.getKick()*20 && config.getCountPunish() == punishments.get(playerName)) {
-            Bukkit.getPlayer(playerName).sendMessage("&7Вы были кикнуты за использование &c&lBariton. Он запрещен на сервере, советуем его удалить пока не поздно :)");
+        if ((double) time == config.getPlayerKick() * 20 && config.getCountPunishmentKick() == punishments.get(playerName)) {
+            Objects.requireNonNull(Bukkit.getPlayer(playerName)).sendMessage("&7Вы были кикнуты за использование &c&lBariton. Он запрещен на сервере, советуем его удалить пока не поздно :)");
             Objects.requireNonNull(Bukkit.getPlayer(playerName)).kickPlayer(Chat.format(config.getKickMessage(), playerName, 0, 0));
             Chat.sendAdminAndConsole("Игрок: " + playerName + "был кикнут за использование баритона");
             times.put(playerName, 0);
@@ -159,5 +155,4 @@ public class Listeners implements Listener {
             arithmetical.put(playerName, 0);
         }
     }
-
 }

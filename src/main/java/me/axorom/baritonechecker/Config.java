@@ -3,34 +3,59 @@ package me.axorom.baritonechecker;
 import org.bukkit.configuration.file.FileConfiguration;
 
 public class Config {
-    private final FileConfiguration config;
     private final String clearMessage;
     private final String punishMessage;
     private final String kickMessage;
-    private final String kickArithMessage;
-    private final double adminPunish;
+    private final String arithmeticalMeanMessage;
+    private final double adminPunishment;
     private final int arithmeticalMean;
-    private final int countPunish;
-    private final double kick;
+    private final int countPunishmentKick;
+    private final double playerKick;
     private final double clearPunishments;
     private final double yawRange;
-    private final double yawRangeCheck;
-    private final boolean useCamera;
-    private final boolean checkCamera;
-    private final boolean checkFlight;
-    private final boolean checkWhenSprinting;
-    private final boolean checkWater;
-    private final boolean checkSneak;
+    private final double cameraYawRangeCheck;
+    private final boolean useCameraYawInsteadVector;
+    private final boolean checkCameraYawForOptimization;
+    private final boolean checkInFlight;
+    private final boolean checkOnlyWhenSprinting;
+    private final boolean checkInWater;
+    private final boolean checkInSneak;
     private final boolean checkWhenSwimming;
     private final boolean debug;
-    private final boolean moveCheck;
-    private final double moveRange;
-    private final double multiplier;
+    private final boolean additionalMovementCheck;
+    private final double additionalMovementRange;
+    private final double additionalMovementDiagonalMulti;
     private final double arithmeticalPunish;
-    private final double arithmeticalMinimum;
-    private final double arithmeticalMaximum;
-    public FileConfiguration getConfig() {
-        return config;
+    private final double arithmeticalLowerValue;
+    private final double arithmeticalHigherValue;
+
+    public Config() {
+        FileConfiguration config = BaritoneChecker.instance.getConfig();
+        clearMessage = config.getString("clear-message");
+        punishMessage = config.getString("baritone.punish-message");
+        arithmeticalMeanMessage = config.getString("baritone.arithmetical-mean-message");
+        kickMessage = config.getString("baritone.kick-message");
+        adminPunishment = config.getDouble("baritone.after.admin-punishment");
+        countPunishmentKick = config.getInt("baritone.after.count-punishment-kick");
+        playerKick = config.getDouble("baritone.after.player-kick");
+        clearPunishments = config.getDouble("baritone.after.clear-punishments");
+        yawRange = config.getDouble("baritone.custom-settings.yaw-range");
+        cameraYawRangeCheck = config.getDouble("baritone.custom-settings.camera-yaw-range-check");
+        useCameraYawInsteadVector = config.getBoolean("baritone.custom-settings.use-camera-yaw-instead-vector");
+        checkCameraYawForOptimization = config.getBoolean("baritone.custom-settings.check-camera-yaw-for-optimization");
+        checkInFlight = config.getBoolean("baritone.custom-settings.check-in-flight");
+        checkOnlyWhenSprinting = config.getBoolean("baritone.custom-settings.check-only-when-sprinting");
+        checkWhenSwimming = config.getBoolean("baritone.custom-settings.check-when-swimming");
+        checkInSneak = config.getBoolean("baritone.custom-settings.check-in-sneak");
+        checkInWater = config.getBoolean("baritone.custom-settings.check-in-water");
+        arithmeticalMean = config.getInt("baritone.arithmetical.mean");
+        debug = config.getBoolean("baritone.debug");
+        additionalMovementCheck = config.getBoolean("baritone.additional-movement-check");
+        additionalMovementRange = config.getDouble("baritone.additional-movement-range");
+        additionalMovementDiagonalMulti = config.getDouble("baritone.additional-movement-diagonal-multi");
+        arithmeticalPunish = config.getDouble("baritone.arithmetical.punish");
+        arithmeticalLowerValue = config.getDouble("baritone.arithmetical.lower-value");
+        arithmeticalHigherValue = config.getDouble("baritone.arithmetical.higher-value");
     }
 
     public String getClearMessage() {
@@ -45,16 +70,16 @@ public class Config {
         return kickMessage;
     }
 
-    public double getAdminPunish() {
-        return adminPunish;
+    public double getAdminPunishment() {
+        return adminPunishment;
     }
 
-    public int getCountPunish() {
-        return countPunish;
+    public int getCountPunishmentKick() {
+        return countPunishmentKick;
     }
 
-    public double getKick() {
-        return kick;
+    public double getPlayerKick() {
+        return playerKick;
     }
 
     public double getClearPunishments() {
@@ -65,39 +90,39 @@ public class Config {
         return yawRange;
     }
 
-    public double getYawRangeCheck() {
-        return yawRangeCheck;
+    public double getCameraYawRangeCheck() {
+        return cameraYawRangeCheck;
     }
 
-    public boolean isUseCamera() {
-        return useCamera;
+    public boolean isUseCameraYawInsteadVector() {
+        return useCameraYawInsteadVector;
     }
 
     public int getArithmeticalMean() {
         return arithmeticalMean;
     }
 
-    public boolean checkCamera() {
-        return checkCamera;
+    public boolean isCheckCameraYawForOptimization() {
+        return checkCameraYawForOptimization;
     }
 
-    public boolean checkFlight() {
-        return checkFlight;
+    public boolean isCheckInFlight() {
+        return checkInFlight;
     }
 
-    public boolean checkWhenSprinting() {
-        return checkWhenSprinting;
+    public boolean isCheckOnlyWhenSprinting() {
+        return checkOnlyWhenSprinting;
     }
 
-    public boolean checkWater() {
-        return checkWater;
+    public boolean isCheckInWater() {
+        return checkInWater;
     }
 
-    public boolean checkSneak() {
-        return checkSneak;
+    public boolean isCheckInSneak() {
+        return checkInSneak;
     }
 
-    public boolean checkWhenSwimming() {
+    public boolean isCheckWhenSwimming() {
         return checkWhenSwimming;
     }
 
@@ -105,61 +130,31 @@ public class Config {
         return debug;
     }
 
-    public String getKickArithMessage() {
-        return kickArithMessage;
+    public String getArithmeticalMeanMessage() {
+        return arithmeticalMeanMessage;
     }
 
-    public boolean isMoveCheck() {
-        return moveCheck;
+    public boolean isAdditionalMovementCheck() {
+        return additionalMovementCheck;
     }
 
-    public double getMoveRange() {
-        return moveRange;
+    public double getAdditionalMovementRange() {
+        return additionalMovementRange;
     }
 
-    public double getMultiplier() {
-        return multiplier;
+    public double getAdditionalMovementDiagonalMulti() {
+        return additionalMovementDiagonalMulti;
     }
 
     public double getArithmeticalPunish() {
         return arithmeticalPunish;
     }
 
-    public double getArithmeticalMinimum() {
-        return arithmeticalMinimum;
+    public double getArithmeticalLowerValue() {
+        return arithmeticalLowerValue;
     }
 
-    public double getArithmeticalMaximum() {
-        return arithmeticalMaximum;
+    public double getArithmeticalHigherValue() {
+        return arithmeticalHigherValue;
     }
-
-    public Config() {
-        config = BaritoneChecker.instance.getConfig();
-        clearMessage = config.getString("clear-message");
-        punishMessage = config.getString("baritone.punish-message");
-        kickArithMessage = config.getString("baritone.arithmetical-mean-message");
-        kickMessage = config.getString("baritone.kick-message");
-        adminPunish = config.getDouble("baritone.after.admin-punishment");
-        countPunish = config.getInt("baritone.after.count-punishment-kick");
-        kick = config.getDouble("baritone.after.player-kick");
-        clearPunishments = config.getDouble("baritone.after.clear-punishments");
-        yawRange = config.getDouble("baritone.custom-settings.yaw-range");
-        yawRangeCheck = config.getDouble("baritone.custom-settings.camera-yaw-range-check");
-        useCamera = config.getBoolean("baritone.custom-settings.use-camera-yaw-instead-vector");
-        checkCamera = config.getBoolean("baritone.custom-settings.check-camera-yaw-for-optimization");
-        checkFlight = config.getBoolean("baritone.custom-settings.check-in-flight");
-        checkWhenSprinting = config.getBoolean("baritone.custom-settings.check-only-when-sprinting");
-        checkWhenSwimming = config.getBoolean("baritone.custom-settings.check-when-swimming");
-        checkSneak = config.getBoolean("baritone.custom-settings.check-in-sneak");
-        checkWater = config.getBoolean("baritone.custom-settings.check-in-water");
-        arithmeticalMean = config.getInt("baritone.arithmetical.mean");
-        debug = config.getBoolean("baritone.debug");
-        moveCheck = config.getBoolean("baritone.additional-movement-check");
-        moveRange = config.getDouble("baritone.additional-movement-range");
-        multiplier = config.getDouble("baritone.additional-movement-diagonal-multi");
-        arithmeticalPunish = config.getDouble("baritone.arithmetical.punish");
-        arithmeticalMinimum = config.getDouble("baritone.arithmetical.lower-value");
-        arithmeticalMaximum = config.getDouble("baritone.arithmetical.higher-value");
-    }
-
 }

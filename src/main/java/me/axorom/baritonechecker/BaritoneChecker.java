@@ -6,18 +6,21 @@ import org.bukkit.plugin.java.JavaPlugin;
 public final class BaritoneChecker extends JavaPlugin {
     public static BaritoneChecker instance;
     public static Config config;
+
     @Override
     public void onEnable() {
-        saveDefaultConfig();
         instance = this;
+        saveDefaultConfig();
         config = new Config();
-        new Runnables();
+        new RunnableContainer();
         Bukkit.getPluginManager().registerEvents(new Listeners(), this);
-        Bukkit.getLogger().info("Plugin enabled and start checking...");
+        Bukkit.getLogger().info("Plugin enabled");
+        Bukkit.getLogger().info("Starting checking...");
     }
 
     @Override
     public void onDisable() {
-        Bukkit.getLogger().info("Plugin disabled and stopped checking...");
+        Bukkit.getLogger().info("Stopping checking...");
+        Bukkit.getLogger().info("Plugin disabled");
     }
 }

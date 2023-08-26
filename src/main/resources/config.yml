@@ -10,7 +10,7 @@ baritone:
     clear-punishments: 120 # in seconds
   arithmetical:
     mean: 3 # after how many times player will kick if failed arithmetical mean check
-    punish: 10 # after how many arithmetical faileds player get punish
+    punish: 10 # after how many arithmetical fails player get punish
     higher-value: 0.27 # higher value of arithmetical average in checks
     lower-value: 0.23 # lower value of arithmetical average in checks
   custom-settings:

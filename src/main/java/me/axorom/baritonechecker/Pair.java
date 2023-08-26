@@ -1,6 +1,6 @@
 package me.axorom.baritonechecker;
 
-public class Pair <T,V> {
+public class Pair<T, V> {
     private T t;
     private V v;
 
@@ -9,19 +9,19 @@ public class Pair <T,V> {
         this.v = v;
     }
 
-    public void setFirst(T t) {
-        this.t = t;
-    }
-
-    public void setSecond(V v) {
-        this.v = v;
-    }
-
     public T getFirst() {
         return t;
     }
 
+    public void setFirst(T t) {
+        this.t = t;
+    }
+
     public V getSecond() {
         return v;
+    }
+
+    public void setSecond(V v) {
+        this.v = v;
     }
 }
