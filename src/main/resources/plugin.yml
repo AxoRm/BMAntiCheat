@@ -1,0 +1,4 @@
+name: BaritoneChecker
+version: '${project.version}'
+main: me.axorom.baritonechecker.BaritoneChecker
+api-version: '1.16'

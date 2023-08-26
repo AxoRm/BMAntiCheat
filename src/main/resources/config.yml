@@ -1,0 +1,29 @@
+clear-message: "&cВсе предупреждения и нарушения для игроков сброшены!"
+baritone:
+  punish-message: "&c[BaritoneChecker] &a{player} &7провалил проверку &cBaritone &a{count}/{max}"
+  kick-message: "&c[BaritoneChecker] &fВы провалили проверку на Baritone, мы передали это администрации проекта. Если вы считаете это ошибкой сообщите это в поддержку в группе вк/на сайте"
+  arithmetical-mean-message: "&c[BaritoneChecker] &a{player} &7провалил арифметическую проверку &cBaritone &a{count}/{max}"
+  after:
+    admin-punishment: 1 # in seconds
+    count-punishment-kick: 3 # player must fail baritone check 2 times before kick
+    player-kick: 3 # in seconds
+    clear-punishments: 120 # in seconds
+  arithmetical:
+    mean: 3 # after how many times player will kick if failed arithmetical mean check
+    punish: 10 # after how many arithmetical faileds player get punish
+    higher-value: 0.27 # higher value of arithmetical average in checks
+    lower-value: 0.23 # lower value of arithmetical average in checks
+  custom-settings:
+    yaw-range: 0.7 # range yaw of angle that player must walk for get punishment (90 - yaw-range <- 90 -> 90 + yaw-range)
+    use-camera-yaw-instead-vector: false # enable it only if you know what you are doing!
+    check-camera-yaw-for-optimization: true # disable this if players use custom camera rotation addon
+    camera-yaw-range-check: 5 # not works if upper setting false
+    check-in-flight: false
+    check-only-when-sprinting: true
+    check-in-water: true
+    check-in-sneak: false
+    check-when-swimming: false
+  debug: false
+  additional-movement-check: true #check block coordinate in range
+  additional-movement-range: 0.007
+  additional-movement-diagonal-multi: 2 #
