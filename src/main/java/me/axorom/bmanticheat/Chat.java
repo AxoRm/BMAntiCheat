@@ -1,4 +1,4 @@
-package me.axorom.baritonechecker;
+package me.axorom.bmanticheat;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;

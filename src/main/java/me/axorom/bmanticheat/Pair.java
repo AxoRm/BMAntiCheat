@@ -1,4 +1,4 @@
-package me.axorom.baritonechecker;
+package me.axorom.bmanticheat;
 
 public class Pair<T, V> {
     private T t;

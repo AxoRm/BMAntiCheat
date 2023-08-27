@@ -1,4 +1,4 @@
-package me.axorom.baritonechecker;
+package me.axorom.bmanticheat;
 
 import org.bukkit.configuration.file.FileConfiguration;
 
@@ -30,7 +30,7 @@ public class Config {
     private final double arithmeticalHigherValue;
 
     public Config() {
-        FileConfiguration config = BaritoneChecker.instance.getConfig();
+        FileConfiguration config = BMAntiCheat.instance.getConfig();
         clearMessage = config.getString("clear-message");
         punishMessage = config.getString("baritone.punish-message");
         arithmeticalMeanMessage = config.getString("baritone.arithmetical-mean-message");

@@ -1,4 +1,4 @@
-name: BaritoneChecker
+name: BMAntiCheat
 version: '${project.version}'
-main: me.axorom.baritonechecker.BaritoneChecker
+main: me.axorom.bmanticheat.BMAntiCheat
 api-version: '1.16'

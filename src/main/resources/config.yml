@@ -1,8 +1,8 @@
-clear-message: "&cВсе предупреждения и нарушения для игроков сброшены!"
+clear-message: "&c[BMAntiCheat] &aВсе предупреждения и нарушения для игроков сброшены!"
 baritone:
-  punish-message: "&c[BaritoneChecker] &a{player} &7провалил проверку &cBaritone &a{count}/{max}"
-  kick-message: "&c[BaritoneChecker] &fВы провалили проверку на Baritone, мы передали это администрации проекта. Если вы считаете это ошибкой сообщите это в поддержку в группе вк/на сайте"
-  arithmetical-mean-message: "&c[BaritoneChecker] &a{player} &7провалил арифметическую проверку &cBaritone &a{count}/{max}"
+  punish-message: "&c[BMAntiCheat] &a{player} &7провалил проверку &cBaritone &a{count}/{max}"
+  kick-message: "&c[BMAntiCheat] &fВы провалили проверку на Baritone, мы передали это администрации проекта. Если вы считаете это ошибкой сообщите это в поддержку в группе вк/на сайте"
+  arithmetical-mean-message: "&c[BMAntiCheat] &a{player} &7провалил арифметическую проверку &cBaritone &a{count}/{max}"
   after:
     admin-punishment: 1 # in seconds
     count-punishment-kick: 3 # player must fail baritone check 2 times before kick

@@ -1,4 +1,4 @@
-package me.axorom.baritonechecker;
+package me.axorom.bmanticheat;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -12,13 +12,13 @@ import org.bukkit.util.Vector;
 import java.util.HashMap;
 import java.util.Objects;
 
-public class Listeners implements Listener {
+public class BaritoneListener implements Listener {
     public static HashMap<String, Pair<Integer, Double>> players = new HashMap<>();
     public static HashMap<String, Integer> punishments = new HashMap<>();
     public static HashMap<String, Integer> times = new HashMap<>();
     public static HashMap<String, Integer> arithmetical = new HashMap<>();
     public static HashMap<String, Boolean> use = new HashMap<>();
-    private final Config config = BaritoneChecker.config;
+    private final Config config = BMAntiCheat.config;
 
     @EventHandler(priority = EventPriority.MONITOR)
     public void onPlayerMove(PlayerMoveEvent event) {

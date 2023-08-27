@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/BaritoneChecker.iml" filepath="$PROJECT_DIR$/BaritoneChecker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BMAntiCheat.iml" filepath="$PROJECT_DIR$/BMAntiCheat.iml" />
     </modules>
   </component>
 </project>
