@@ -1,0 +1,6 @@
+name: BMAntiCheat
+version: '1.0.0'
+main: me.axorom.bmanticheat.BMAntiCheat
+api-version: '1.16'
+depend:
+  - ProtocolLib

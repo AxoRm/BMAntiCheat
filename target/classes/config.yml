@@ -1,0 +1,83 @@
+reset-message: "&c[BMAntiCheat] &aВсе предупреждения и нарушения для игроков сброшены!"
+send-reset-message: false
+period-reset-punishments: 120 # in seconds
+debug: false
+baritone:
+  punish-message: "&c[BMAntiCheat] &a{player} &7провалил проверку &cBaritone &a{count}/{max}"
+  kick-message: "&c[BMAntiCheat] &fВы провалили проверку на Baritone, мы передали это администрации проекта. Если вы считаете это ошибкой сообщите это в поддержку в группе вк/на сайте"
+  arithmetical-punish-message: "&c[BMAntiCheat] &a{player} &7провалил арифметическую проверку &cBaritone &a{count}/{max}"
+  arithmetical-kick-message: "&c[BMAntiCheat] &fВы провалили проверку на Baritone, мы передали это администрации проекта. Если вы считаете это ошибкой сообщите это в поддержку в группе вк/на сайте[ARITH]"
+  after:
+    admin-notify: 1 # in seconds
+    count-punishment-kick: 3 # player must fail baritone check 2 times before kick
+    player-kick: 3 # in seconds
+  arithmetical:
+    mean: 3 # after how many times player will kick if failed arithmetical mean check
+    punish: 10 # after how many arithmetical fails player get punish
+    higher-value: 0.27 # higher value of arithmetical average in checks
+    lower-value: 0.23 # lower value of arithmetical average in checks
+  custom-settings:
+    disabled-worlds:
+      - spawn
+    yaw-range: 0.7 # range yaw of angle that player must walk for get punishment (90 - yaw-range <- 90 -> 90 + yaw-range)
+    use-camera-yaw-instead-vector: false # enable it only if you know what you are doing!
+    check-camera-yaw-for-optimization: true # disable this if players use custom camera rotation addon
+    camera-yaw-range-check: 5 # not works if upper setting false
+    check-in-flight: false
+    check-in-water: true
+    check-in-sneak: false
+    check-when-swimming: false
+  additional-movement-check: true #check block coordinate in range
+  additional-movement-range: 0.007
+  additional-movement-diagonal-multi: 2
+
+click-through-wall:
+  punish-message: "&c[BMAntiCheat] &a{player} &7провалил проверку &cIllegalClick &a{count}/{max}"
+  kick-message: "&c[BMAntiCheat] &fВы провалили проверку на IllegalClick, мы передали это администрации проекта. Если вы считаете это ошибкой сообщите это в поддержку в группе вк/на сайте"
+  admin-notify: 1 #count of punishment that player get
+  kick: 5 #count when player kicks 4 - survival 5 - creative (ops not checked)
+  radius: 5 #after this radius anti cheat give punishment forced(player can click only 5 block radius on default)
+  blocks: #blocks that check anti cheat
+    - cobblestone
+    - stone
+    - diamond_ore
+    - gold_ore
+    - redstone_ore
+    - lapis_ore
+    - emerald_ore
+    - coal_ore
+    - iron_ore
+    - andesite
+    - granite
+    - diorite
+    - oak_planks
+    - netherrack
+    - ancient_debris
+    - quartz_ore
+    - soul_sand
+    - glowstone
+    - nether_gold_ore
+    - nether_quartz_ore
+  disabled-worlds:
+    - spawn
+
+dig-through-wall:
+  punish-message: "&c[BMAntiCheat] &a{player} &7провалил проверку &cIllegalDig &a{count}/{max}"
+  kick-message: "&c[BMAntiCheat] &fВы провалили проверку на IllegalDig, мы передали это администрации проекта. Если вы считаете это ошибкой сообщите это в поддержку в группе вк/на сайте"
+  valuable-blocks:
+    - diamond_ore
+    - gold_ore
+    - redstone_ore
+    - lapis_ore
+    - emerald_ore
+    - coal_ore
+    - iron_ore
+    - ancient_debris
+    - nether_gold_ore
+    - nether_quartz_ore
+  click-count: 30
+  kick: 5
+  admin-notify: 1
+  max-height: 64
+  disabled-worlds:
+    - spawn
