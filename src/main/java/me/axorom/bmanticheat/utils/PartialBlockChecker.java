@@ -1,0 +1,104 @@
+// PartialBlockChecker.java
+package me.axorom.bmanticheat.utils;
+
+import org.bukkit.Material;
+
+public class PartialBlockChecker {
+    public static boolean isPartialBlock(Material material) {
+        switch (material) {
+            case LAVA:
+            case WATER:
+            case ACACIA_SLAB:
+            case BIRCH_SLAB:
+            case BLACK_SHULKER_BOX:
+            case BLUE_SHULKER_BOX:
+            case BREWING_STAND:
+            case BRICK_SLAB:
+            case BROWN_SHULKER_BOX:
+            case CAKE:
+            case CHEST:
+            case CLAY:
+            case COBBLESTONE_SLAB:
+            case CYAN_SHULKER_BOX:
+            case DARK_OAK_SLAB:
+            case DAYLIGHT_DETECTOR:
+            case ENDER_CHEST:
+            case FLOWER_POT:
+            case GRAY_SHULKER_BOX:
+            case GREEN_SHULKER_BOX:
+            case HOPPER:
+            case IRON_DOOR:
+            case JUNGLE_DOOR:
+            case JUNGLE_SLAB:
+            case LADDER:
+            case LIGHT_BLUE_SHULKER_BOX:
+            case LIGHT_GRAY_SHULKER_BOX:
+            case LIME_SHULKER_BOX:
+            case MAGENTA_SHULKER_BOX:
+            case NETHER_BRICK_SLAB:
+            case OAK_DOOR:
+            case OAK_SLAB:
+            case ORANGE_SHULKER_BOX:
+            case PINK_SHULKER_BOX:
+            case PURPLE_SHULKER_BOX:
+            case QUARTZ_SLAB:
+            case RED_SANDSTONE_SLAB:
+            case RED_SHULKER_BOX:
+            case SANDSTONE_SLAB:
+            case SPRUCE_DOOR:
+            case SPRUCE_SLAB:
+            case STONE_SLAB:
+            case TRAPPED_CHEST:
+            case WHITE_SHULKER_BOX:
+            case YELLOW_SHULKER_BOX:
+            case ACACIA_FENCE_GATE:
+            case BIRCH_FENCE_GATE:
+            case DARK_OAK_FENCE_GATE:
+            case JUNGLE_FENCE_GATE:
+            case OAK_FENCE_GATE:
+            case SPRUCE_FENCE_GATE:
+            case IRON_TRAPDOOR:
+            case ACACIA_TRAPDOOR:
+            case BIRCH_TRAPDOOR:
+            case DARK_OAK_TRAPDOOR:
+            case JUNGLE_TRAPDOOR:
+            case OAK_TRAPDOOR:
+            case SPRUCE_TRAPDOOR:
+            case ANVIL:
+            case CHIPPED_ANVIL:
+            case DAMAGED_ANVIL:
+            case GRINDSTONE:
+            case LECTERN:
+            case STONECUTTER:
+            case ACACIA_FENCE:
+            case BIRCH_FENCE:
+            case DARK_OAK_FENCE:
+            case JUNGLE_FENCE:
+            case OAK_FENCE:
+            case SPRUCE_FENCE:
+            case ACACIA_PRESSURE_PLATE:
+            case BIRCH_PRESSURE_PLATE:
+            case DARK_OAK_PRESSURE_PLATE:
+            case JUNGLE_PRESSURE_PLATE:
+            case OAK_PRESSURE_PLATE:
+            case SPRUCE_PRESSURE_PLATE:
+            case STONE_PRESSURE_PLATE:
+            case LIGHT_WEIGHTED_PRESSURE_PLATE:
+            case HEAVY_WEIGHTED_PRESSURE_PLATE:
+            case REDSTONE_WIRE:
+            case REPEATER:
+            case COMPARATOR:
+            case LEVER:
+            case STONE_BUTTON:
+            case ACACIA_BUTTON:
+            case BIRCH_BUTTON:
+            case DARK_OAK_BUTTON:
+            case JUNGLE_BUTTON:
+            case OAK_BUTTON:
+            case SPRUCE_BUTTON:
+                return true;
+            default:
+                return false;
+        }
+    }
+}

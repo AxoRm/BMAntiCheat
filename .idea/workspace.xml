@@ -4,26 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dead6a41-489a-4a5d-8ea8-a0b406de5c99" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BMAntiCheat.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/axorom/bmanticheat/IllegalClickListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+    <list default="true" id="dead6a41-489a-4a5d-8ea8-a0b406de5c99" name="Changes" comment="added IllegalClickListener">
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/axorom/bmanticheat/BlockDigListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/axorom/bmanticheat/GraphMap/Line3D.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/axorom/bmanticheat/GraphMap/PlayerPath.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/axorom/bmanticheat/IllegalDigListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/axorom/bmanticheat/baritone/BaritoneYawPitch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/axorom/bmanticheat/baritone/CheckManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/axorom/bmanticheat/baritone/LineCheck.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/axorom/bmanticheat/baritone/PlayerData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/axorom/bmanticheat/utils/BlockFaceAnalyser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/axorom/bmanticheat/utils/PartialBlockChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BaritoneChecker.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/axorom/baritonechecker/BaritoneChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/axorom/bmanticheat/BMAntiCheat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/axorom/baritonechecker/Chat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/axorom/bmanticheat/Chat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/axorom/baritonechecker/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/axorom/bmanticheat/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/axorom/baritonechecker/Listeners.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/axorom/bmanticheat/BaritoneListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/axorom/baritonechecker/Pair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/axorom/bmanticheat/Pair.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/axorom/baritonechecker/RunnableContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/axorom/bmanticheat/RunnableContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/axorom/bmanticheat/BMAntiCheat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/axorom/bmanticheat/BMAntiCheat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/axorom/bmanticheat/BaritoneListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/axorom/bmanticheat/Chat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/axorom/bmanticheat/utils/Chat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/axorom/bmanticheat/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/axorom/bmanticheat/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/axorom/bmanticheat/IllegalClickListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/axorom/bmanticheat/IllegalClickListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/axorom/bmanticheat/Pair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/axorom/bmanticheat/utils/Pair.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/axorom/bmanticheat/RunnableContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/axorom/bmanticheat/RunnableContainer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
     </list>
+    <list id="4d778976-b83a-4f43-ad34-a6fbe56a1749" name="Changes by vladislav" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,8 +45,17 @@
       </list>
     </option>
   </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
+  </component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -49,24 +67,80 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
     &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Maven.BMAntiCheat [package].executor&quot;: &quot;Run&quot;,
     &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
     &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
     &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;code.cleanup.on.save&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/Desktop/projects/BMAntiCheat&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/rakse/OneDrive/Рабочий стол/projects/ProtectionStones&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.14746094&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.archetype.catalogs&quot;,
+    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="me.axorom.bmanticheat.Main" />
+      <module name="BMAntiCheat" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="me.axorom.bmanticheat.GraphMap.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="program" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="BMAntiCheat" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.12 (zachet)" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/main/resources" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/resources/program.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-1.8.0_402-semeru-1.8.0_402-3183f394aec4-95bc47f4" />
+        <option value="jdk-1.8.0_402-semeru-1.8.0_402-f644763e9732-cd8dfe1b" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -81,10 +155,75 @@
       <workItem from="1693122562710" duration="5618000" />
       <workItem from="1693142055871" duration="2551000" />
       <workItem from="1693157517667" duration="10226000" />
+      <workItem from="1693173968253" duration="1826000" />
+      <workItem from="1693201670147" duration="29000" />
+      <workItem from="1693201706937" duration="385000" />
+      <workItem from="1693219199320" duration="635000" />
+      <workItem from="1693220067979" duration="617000" />
+      <workItem from="1693233079476" duration="7194000" />
+      <workItem from="1693312908548" duration="18745000" />
+      <workItem from="1693397195167" duration="1588000" />
+      <workItem from="1693415283844" duration="313000" />
+      <workItem from="1693485818348" duration="25000" />
+      <workItem from="1697227244540" duration="649000" />
+      <workItem from="1697227916286" duration="143000" />
+      <workItem from="1697311930677" duration="612000" />
+      <workItem from="1700666909364" duration="7484000" />
+      <workItem from="1703768724346" duration="18415000" />
+      <workItem from="1703840860489" duration="24740000" />
+      <workItem from="1703927428760" duration="17281000" />
+      <workItem from="1704015100831" duration="1816000" />
+      <workItem from="1704016957070" duration="3715000" />
+      <workItem from="1704033469412" duration="597000" />
+      <workItem from="1704111687959" duration="2204000" />
+      <workItem from="1704118664621" duration="77000" />
+      <workItem from="1704191840487" duration="628000" />
+      <workItem from="1704196766901" duration="13359000" />
+      <workItem from="1704239435530" duration="107000" />
+      <workItem from="1704294529802" duration="7697000" />
+      <workItem from="1704368157915" duration="599000" />
     </task>
+    <task id="LOCAL-00001" summary="added IllegalClickListener">
+      <option name="closed" value="true" />
+      <created>1693174021124</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1693174021124</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="java:org.spigotmc:spigot-api" />
+    <option featureType="com.intellij.configurationType" implementationName="PythonConfigurationType" />
+    <option featureType="com.intellij.facetType" implementationName="minecraft" />
+    <option featureType="com.intellij.configurationType" implementationName="Application" />
+    <option featureType="dependencySupport" implementationName="java:org.projectlombok:lombok" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added IllegalClickListener" />
+    <option name="LAST_COMMIT_MESSAGE" value="added IllegalClickListener" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/program_py$program.coverage" NAME="program Coverage Results" MODIFIED="1704118713980" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/main/resources" />
   </component>
 </project>

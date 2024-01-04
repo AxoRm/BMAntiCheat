@@ -1,4 +1,4 @@
-package me.axorom.bmanticheat;
+package me.axorom.bmanticheat.utils;
 
 public class Pair<T, V> {
     private T t;

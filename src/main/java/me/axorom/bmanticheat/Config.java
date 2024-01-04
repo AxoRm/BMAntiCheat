@@ -1,160 +1,136 @@
 package me.axorom.bmanticheat;
 
-import org.bukkit.configuration.file.FileConfiguration;
+import com.electronwill.nightconfig.core.conversion.Path;
+import lombok.Getter;
 
+import java.util.List;
+
+@Getter
 public class Config {
-    private final String clearMessage;
-    private final String punishMessage;
-    private final String kickMessage;
-    private final String arithmeticalMeanMessage;
-    private final double adminPunishment;
-    private final int arithmeticalMean;
-    private final int countPunishmentKick;
-    private final double playerKick;
-    private final double clearPunishments;
-    private final double yawRange;
-    private final double cameraYawRangeCheck;
-    private final boolean useCameraYawInsteadVector;
-    private final boolean checkCameraYawForOptimization;
-    private final boolean checkInFlight;
-    private final boolean checkOnlyWhenSprinting;
-    private final boolean checkInWater;
-    private final boolean checkInSneak;
-    private final boolean checkWhenSwimming;
-    private final boolean debug;
-    private final boolean additionalMovementCheck;
-    private final double additionalMovementRange;
-    private final double additionalMovementDiagonalMulti;
-    private final double arithmeticalPunish;
-    private final double arithmeticalLowerValue;
-    private final double arithmeticalHigherValue;
+    @Path("reset-message")
+    public String resetMessage;
 
-    public Config() {
-        FileConfiguration config = BMAntiCheat.instance.getConfig();
-        clearMessage = config.getString("clear-message");
-        punishMessage = config.getString("baritone.punish-message");
-        arithmeticalMeanMessage = config.getString("baritone.arithmetical-mean-message");
-        kickMessage = config.getString("baritone.kick-message");
-        adminPunishment = config.getDouble("baritone.after.admin-punishment");
-        countPunishmentKick = config.getInt("baritone.after.count-punishment-kick");
-        playerKick = config.getDouble("baritone.after.player-kick");
-        clearPunishments = config.getDouble("baritone.after.clear-punishments");
-        yawRange = config.getDouble("baritone.custom-settings.yaw-range");
-        cameraYawRangeCheck = config.getDouble("baritone.custom-settings.camera-yaw-range-check");
-        useCameraYawInsteadVector = config.getBoolean("baritone.custom-settings.use-camera-yaw-instead-vector");
-        checkCameraYawForOptimization = config.getBoolean("baritone.custom-settings.check-camera-yaw-for-optimization");
-        checkInFlight = config.getBoolean("baritone.custom-settings.check-in-flight");
-        checkOnlyWhenSprinting = config.getBoolean("baritone.custom-settings.check-only-when-sprinting");
-        checkWhenSwimming = config.getBoolean("baritone.custom-settings.check-when-swimming");
-        checkInSneak = config.getBoolean("baritone.custom-settings.check-in-sneak");
-        checkInWater = config.getBoolean("baritone.custom-settings.check-in-water");
-        arithmeticalMean = config.getInt("baritone.arithmetical.mean");
-        debug = config.getBoolean("baritone.debug");
-        additionalMovementCheck = config.getBoolean("baritone.additional-movement-check");
-        additionalMovementRange = config.getDouble("baritone.additional-movement-range");
-        additionalMovementDiagonalMulti = config.getDouble("baritone.additional-movement-diagonal-multi");
-        arithmeticalPunish = config.getDouble("baritone.arithmetical.punish");
-        arithmeticalLowerValue = config.getDouble("baritone.arithmetical.lower-value");
-        arithmeticalHigherValue = config.getDouble("baritone.arithmetical.higher-value");
-    }
+    @Path("send-reset-message")
+    public boolean sendResetMessage;
 
-    public String getClearMessage() {
-        return clearMessage;
-    }
+    @Path("period-reset-punishments")
+    public int periodResetPunishments;
 
-    public String getPunishMessage() {
-        return punishMessage;
-    }
+    @Path("debug")
+    public boolean debug;
 
-    public String getKickMessage() {
-        return kickMessage;
-    }
+    @Path("baritone.punish-message")
+    public String bPunishMessage;
 
-    public double getAdminPunishment() {
-        return adminPunishment;
-    }
+    @Path("baritone.kick-message")
+    public String bKickMessage;
 
-    public int getCountPunishmentKick() {
-        return countPunishmentKick;
-    }
+    @Path("baritone.arithmetical-punish-message")
+    public String bArithmeticalPunishMessage;
 
-    public double getPlayerKick() {
-        return playerKick;
-    }
+    @Path("baritone.arithmetical-kick-message")
+    public String bArithmeticalKickMessage;
 
-    public double getClearPunishments() {
-        return clearPunishments;
-    }
+    @Path("baritone.after.admin-notify")
+    public int bAdminNotify;
 
-    public double getYawRange() {
-        return yawRange;
-    }
+    @Path("baritone.after.count-punishment-kick")
+    public int bCountPunishmentKick;
 
-    public double getCameraYawRangeCheck() {
-        return cameraYawRangeCheck;
-    }
+    @Path("baritone.after.player-kick")
+    public int bPlayerKick;
 
-    public boolean isUseCameraYawInsteadVector() {
-        return useCameraYawInsteadVector;
-    }
+    @Path("baritone.arithmetical.mean")
+    public int bMean;
 
-    public int getArithmeticalMean() {
-        return arithmeticalMean;
-    }
+    @Path("baritone.arithmetical.punish")
+    public int bPunish;
 
-    public boolean isCheckCameraYawForOptimization() {
-        return checkCameraYawForOptimization;
-    }
+    @Path("baritone.arithmetical.higher-value")
+    public double bHigherValue;
 
-    public boolean isCheckInFlight() {
-        return checkInFlight;
-    }
+    @Path("baritone.arithmetical.lower-value")
+    public double bLowerValue;
 
-    public boolean isCheckOnlyWhenSprinting() {
-        return checkOnlyWhenSprinting;
-    }
+    @Path("baritone.custom-settings.disabled-worlds")
+    public List<String> bDisabledWorlds;
 
-    public boolean isCheckInWater() {
-        return checkInWater;
-    }
+    @Path("baritone.custom-settings.yaw-range")
+    public double bYawRange;
 
-    public boolean isCheckInSneak() {
-        return checkInSneak;
-    }
+    @Path("baritone.custom-settings.use-camera-yaw-instead-vector")
+    public boolean bUseCameraYawInsteadVector;
 
-    public boolean isCheckWhenSwimming() {
-        return checkWhenSwimming;
-    }
+    @Path("baritone.custom-settings.check-camera-yaw-for-optimization")
+    public boolean bCheckCameraYawForOptimization;
 
-    public boolean isDebug() {
-        return debug;
-    }
+    @Path("baritone.custom-settings.camera-yaw-range-check")
+    public int bCameraYawRangeCheck;
 
-    public String getArithmeticalMeanMessage() {
-        return arithmeticalMeanMessage;
-    }
+    @Path("baritone.custom-settings.check-in-flight")
+    public boolean bCheckInFlight;
 
-    public boolean isAdditionalMovementCheck() {
-        return additionalMovementCheck;
-    }
+    @Path("baritone.custom-settings.check-in-water")
+    public boolean bCheckInWater;
 
-    public double getAdditionalMovementRange() {
-        return additionalMovementRange;
-    }
+    @Path("baritone.custom-settings.check-in-sneak")
+    public boolean bCheckInSneak;
 
-    public double getAdditionalMovementDiagonalMulti() {
-        return additionalMovementDiagonalMulti;
-    }
+    @Path("baritone.custom-settings.check-when-swimming")
+    public boolean bCheckWhenSwimming;
 
-    public double getArithmeticalPunish() {
-        return arithmeticalPunish;
-    }
+    @Path("baritone.additional-movement-check")
+    public boolean bAdditionalMovementCheck;
 
-    public double getArithmeticalLowerValue() {
-        return arithmeticalLowerValue;
-    }
+    @Path("baritone.additional-movement-range")
+    public double bAdditionalMovementRange;
 
-    public double getArithmeticalHigherValue() {
-        return arithmeticalHigherValue;
-    }
+    @Path("baritone.additional-movement-diagonal-multi")
+    public int bAdditionalMovementDiagonalMulti;
+
+    @Path("click-through-wall.punish-message")
+    public String cPunishMessage;
+
+    @Path("click-through-wall.kick-message")
+    public String cKickMessage;
+
+    @Path("click-through-wall.admin-notify")
+    public int cAdminNotify;
+
+    @Path("click-through-wall.kick")
+    public int cKick;
+
+    @Path("click-through-wall.radius")
+    public int cRadius;
+
+    @Path("click-through-wall.blocks")
+    public List<String> cBlocks;
+
+    @Path("click-through-wall.disabled-worlds")
+    public List<String> cDisabledWorlds;
+
+    @Path("dig-through-wall.punish-message")
+    public String dPunishMessage;
+
+    @Path("dig-through-wall.kick-message")
+    public String dKickMessage;
+
+    @Path("dig-through-wall.valuable-blocks")
+    public List<String> dValuableBlocks;
+
+    @Path("dig-through-wall.click-count")
+    public int dClickCount;
+
+    @Path("dig-through-wall.kick")
+    public int dKick;
+
+    @Path("dig-through-wall.admin-notify")
+    public int dAdminNotify;
+
+    @Path("dig-through-wall.max-height")
+    public int dMaxHeight;
+
+    @Path("dig-through-wall.disabled-worlds")
+    public List<String> dDisabledWorlds;
+
 }
