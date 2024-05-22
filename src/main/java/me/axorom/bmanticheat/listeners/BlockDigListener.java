@@ -1,4 +1,4 @@
-package me.axorom.bmanticheat;
+package me.axorom.bmanticheat.listeners;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.ListenerPriority;
@@ -6,6 +6,7 @@ import com.comphenix.protocol.events.PacketAdapter;
 import com.comphenix.protocol.events.PacketEvent;
 import com.comphenix.protocol.wrappers.BlockPosition;
 import com.comphenix.protocol.wrappers.EnumWrappers;
+import me.axorom.bmanticheat.BMAntiCheat;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 
@@ -13,7 +14,7 @@ public abstract class BlockDigListener extends PacketAdapter {
     EnumWrappers.PlayerDigType digType;
 
     public BlockDigListener(EnumWrappers.PlayerDigType digType) {
-        super(BMAntiCheat.instance, ListenerPriority.MONITOR, PacketType.Play.Client.BLOCK_DIG);
+        super(BMAntiCheat.instance, ListenerPriority.LOWEST, PacketType.Play.Client.BLOCK_DIG);
         this.digType = digType;
     }
 
@@ -23,10 +24,10 @@ public abstract class BlockDigListener extends PacketAdapter {
         if (action != digType) return;
         Player player = event.getPlayer();
         Block block = getClickedBlock(event);
-        analyzePacket(player, block);
+        analyzePacket(player, block, event);
     }
 
-    public abstract void analyzePacket(Player player, Block digedBlock);
+    public abstract void analyzePacket(Player player, Block digedBlock, PacketEvent event);
 
     private Block getClickedBlock(PacketEvent event) {
         BlockPosition blockPosition = event.getPacket().getBlockPositionModifier().read(0);

@@ -31,7 +31,7 @@ public class BlockFaceAnalyser {
                 .anyMatch(PartialBlockChecker::isPartialBlock);
     }
 
-    public static List<Block> getValuableBlocks(Block digedBlock, String name, List<String> valuableMaterials) {
+    public static List<Block> getValuableBlocks(Block digedBlock, List<String> valuableMaterials) {
         return Arrays.stream(faces)
                 .map(digedBlock::getRelative)
                 .filter(block -> !isAirOrPartialNear(block))

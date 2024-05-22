@@ -17,9 +17,20 @@ public class PartialBlockChecker {
             case BROWN_SHULKER_BOX:
             case CAKE:
             case CHEST:
+            case TORCH:
+            case REDSTONE_TORCH:
+            case WALL_TORCH:
+            case SOUL_TORCH:
+            case SOUL_WALL_TORCH:
+            case REDSTONE_WALL_TORCH:
             case CLAY:
             case COBBLESTONE_SLAB:
             case CYAN_SHULKER_BOX:
+            case FIRE:
+            case SOUL_FIRE:
+            case CAMPFIRE:
+            case SOUL_CAMPFIRE:
+            case LANTERN:
             case DARK_OAK_SLAB:
             case DAYLIGHT_DETECTOR:
             case ENDER_CHEST:
@@ -30,7 +41,9 @@ public class PartialBlockChecker {
             case IRON_DOOR:
             case JUNGLE_DOOR:
             case JUNGLE_SLAB:
+            case COCOA:
             case LADDER:
+            case FARMLAND:
             case LIGHT_BLUE_SHULKER_BOX:
             case LIGHT_GRAY_SHULKER_BOX:
             case LIME_SHULKER_BOX:
