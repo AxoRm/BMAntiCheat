@@ -56,7 +56,7 @@ This project is licensed under the CC BY-NC-ND (Attribution-NonCommercial-NoDeri
 
 ## Contact
 
-For any questions or support, please open an issue on the GitHub repository or contact the developer at [developer@example.com].
+For any questions or support, please open an issue on the GitHub repository or contact the developer at [raksenov50@gmail.com].
 
 ---
 
