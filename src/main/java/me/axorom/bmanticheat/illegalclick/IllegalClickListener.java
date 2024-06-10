@@ -49,6 +49,7 @@ public class IllegalClickListener extends BlockDigListener {
             if (punishments % config.getCAdminNotify() == 0 && punishments != 0) {
                 Chat.sendAdminAndConsole(Chat.format(config.getCPunishMessage(), player.getName(), punishments, config.getCKick()));
             }
+            // fake kick players
             if (punishments >= config.getCKick()) {
                 punishments = 0;
                 Chat.kickPlayer(player, config.getCKickMessage(), punishments, config.getCKick());

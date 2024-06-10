@@ -58,10 +58,10 @@ public class IllegalDigListener extends BlockDigListener implements Listener {
             if (punishments % config.getDAdminNotify() == 0 && punishments != 0) {
                 Chat.sendAdminAndConsole(Chat.format(config.getDPunishMessage(), player.getName(), punishments, config.getDKick()));
             }
-            if (punishments >= config.getDKick()) {
-                punishments = 0;
-                Chat.kickPlayer(player, config.getDKickMessage(), punishments, config.getDKick());
-            }
+//            if (punishments >= config.getDKick()) {
+//                punishments = 0;
+//                Chat.kickPlayer(player, config.getDKickMessage(), punishments, config.getDKick());
+//            }
             playerData.setIDigPunishments(punishments);
             BMAntiCheat.playerDataMap.put(player, playerData);
         }
